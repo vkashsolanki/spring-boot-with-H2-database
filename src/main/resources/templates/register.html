@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Registration Page</h1>
+<body>
+<form action="register" th:obejct="@{user}"  method="post">
+<p th:if="@{#fields.hasErrors("name")}" th:errors="*{name}"/>
+Name:<input type="text" name="name" placeholder="Enter name" th:fields="*{name}"> 
+<br>
+Email:<input type="email" name="email" placeholder="Enter email"> 
+<br>
+Mobile:<input type="tel" name="mobile" placeholder="Enter mobile"> 
+<br>
+Password:<input type="password" name="pass" placeholder="Enter password"> 
+<br>
+<input type="submit" value="Register">
+</form>
+</body>
+</html>
